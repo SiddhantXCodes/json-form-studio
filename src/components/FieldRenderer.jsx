@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { enumSchema } from "../schema/enumSchema";
+import TableDates from "./TableDates";
+import TableCategoryWise from "./TableCategoryWise";
+import TableVacancyMatrix from "./TableVacancyMatrix";
 
 export default function FieldRenderer({
   label,
@@ -95,6 +98,54 @@ export default function FieldRenderer({
       </div>
     );
   }
+/* =========================
+   SPECIAL TABLE: DATES
+========================= */
+if (path === "dates" && Array.isArray(value)) {
+  return (
+    <div>
+      <h3 className="font-semibold mb-2">Important Dates</h3>
+      <TableDates
+        value={value}
+        path={path}
+        onChange={onChange}
+      />
+    </div>
+  );
+}
+/* =========================
+   SPECIAL TABLE: VACANCY CATEGORY WISE
+========================= */
+if (path === "vacancy.category_wise" && Array.isArray(value)) {
+  return (
+    <div>
+      <h3 className="font-semibold mb-2">
+        Category-wise Vacancy Distribution
+      </h3>
+
+      <TableCategoryWise
+        value={value}
+        path={path}
+        onChange={onChange}
+      />
+    </div>
+  );
+}
+if (path === "vacancy.post_category_matrix") {
+  return (
+    <div>
+      <h3 className="font-semibold mb-2">
+        Vacancy Distribution (Editable)
+      </h3>
+
+      <TableVacancyMatrix
+        value={value}
+        path={path}
+        onChange={onChange}
+      />
+    </div>
+  );
+}
 
   /* ARRAY */
   if (Array.isArray(value)) {

@@ -1,6 +1,7 @@
 import { jobSchema } from "../schema/jobSchema";
 import FieldRenderer from "./FieldRenderer";
 import { setByPath } from "../utils/setByPath";
+import { syncVacancy } from "../utils/syncVacancy";
 
 const getByPath = (obj, path) =>
   path.replace(/\[(\d+)\]/g, ".$1").split(".").reduce((a, k) => a?.[k], obj);
@@ -15,9 +16,18 @@ export default function JobEditor({ data, onChange }) {
     );
   }
 
-  const handleFieldChange = (path, value) => {
-    onChange(prev => setByPath(prev, path, value));
-  };
+ const handleFieldChange = (path, value) => {
+  onChange(prev => {
+    const updated = setByPath(prev, path, value);
+
+    if (path.startsWith("vacancy.post_category_matrix")) {
+      updated.vacancy = syncVacancy(updated.vacancy);
+    }
+
+    return updated;
+  });
+};
+
 
   return (
     <div className="p-4 space-y-6 overflow-auto bg-white">
