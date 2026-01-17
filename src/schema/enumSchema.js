@@ -9,27 +9,135 @@ export const enumSchema = {
   /* =========================
      BASIC META
   ========================= */
+
+   "meta.notice_type": {
+    type: "select",
+    options: [
+     "Short Notice",
+  "Detailed Notice",
+  "Update",
+  "Corrigendum",
+  "Result",
+  "Admit Card",
+  "Answer Key",
+  "Cut Off",
+  "Final Result"
+    ]
+  },
   "meta.job_type": {
     type: "select",
     options: ["Central", "State", "PSU", "Bank", "Defence"]
   },
 
-  "meta.job_state": {
-    type: "multiselect",
-    options: [
-      "Uttar Pradesh",
-      "Delhi",
-      "Bihar",
-      "Rajasthan",
-      "Maharashtra",
-      "All India"
-    ]
-  },
+"meta.job_state": {
+  type: "select",
+  options: [
+    "All India",
 
-  "meta.apply_mode": {
-    type: "select",
-    options: ["Online", "Offline"]
-  },
+    // Popular / High-traffic states
+    "Uttar Pradesh",
+    "Delhi",
+    "Bihar",
+    "Maharashtra",
+    "Rajasthan",
+    "West Bengal",
+    "Madhya Pradesh",
+    "Gujarat",
+    "Karnataka",
+    "Tamil Nadu",
+
+    // Other Indian States & UTs (Alphabetical)
+    "Andaman and Nicobar Islands",
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Chandigarh",
+    "Chhattisgarh",
+    "Dadra and Nagar Haveli and Daman and Diu",
+    "Goa",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jammu and Kashmir",
+    "Jharkhand",
+    "Kerala",
+    "Ladakh",
+    "Lakshadweep",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Puducherry",
+    "Punjab",
+    "Sikkim",
+    "Telangana",
+    "Tripura",
+    "Uttarakhand"
+  ]
+}
+,
+"meta.vacancy_status": {
+  type: "select",
+  required: true,
+  options: [
+    "Exact",
+    "Tentative",
+    "Expected",
+    "Not Disclosed"
+  ]
+}
+,
+"meta.qualification": {
+  type: "multiselect",
+  required: true,
+  options: [
+    "8th Pass",
+    "10th Pass",
+    "12th Pass",
+    "Diploma",
+    "ITI",
+    "Graduate",
+    "Post Graduate",
+    "B.Tech",
+    "B.E",
+    "B.Sc",
+    "B.Com",
+    "B.A",
+    "LLB",
+    "MBBS",
+    "BAMS",
+    "BHMS",
+    "BDS",
+    "B.Ed",
+    "M.Ed",
+    "MCA",
+    "MBA",
+    "CA",
+    "CS",
+    "ICWA",
+    "PhD",
+    "Any Degree",
+    "Any Graduate",
+    "Engineering",
+    "Medical",
+    "Paramedical",
+    "Nursing",
+    "Teaching"
+  ]
+}
+,
+ "meta.apply_mode": {
+  type: "select",
+  required: true,
+  options: [
+    "Online",
+    "Offline",
+    "Online / Offline",
+    "Email",
+    "Walk-in"
+  ]
+}
+,
 
   /* =========================
      APPLICATION FEE
