@@ -1,72 +1,16 @@
+# React + Vite
 
----
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## JSON Form Studio
-🧩 Paste any JSON → instantly get a beautiful, editable form → export valid JSON. ⚡ 100% client-side • 🚀 Fast • 🔒 Schema-safe • 🌐 Works on GitHub Pages
-**JSON Form Studio** is a lightweight, schema-agnostic web app that converts any valid JSON into a clean, editable form — and exports it back as valid JSON.
+Currently, two official plugins are available:
 
-### ✨ Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-* Paste JSON → auto-generated form
-* Supports deeply nested objects & arrays
-* No backend, no database
-* Schema-safe editing (keys locked)
-* Export clean JSON
-* Runs on GitHub Pages / Netlify / Vercel
+## React Compiler
 
-### 🚀 Live Demo
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-```
-https://yourname.github.io/json-form-studio
-```
+## Expanding the ESLint configuration
 
-### 🖼 Preview
-
-(Add 1–2 screenshots later)
-
-### 🛠 Tech Stack
-
-* React
-* Tailwind CSS
-* Vite
-
-### 📦 Use Cases
-
-* Editing large config files
-* CMS-less content editing
-* API payload preparation
-* Job / product / listing data
-* Developer tools & internal dashboards
-
-### 🧪 How to Run Locally
-
-```bash
-npm install
-npm run dev
-```
-
-### 🌍 Deploy
-
-Works out of the box on:
-
-* GitHub Pages
-* Netlify
-* Vercel
-
-### 🧩 Roadmap
-
-* Tabs & collapsible sections
-* Schema hints (readOnly, required)
-* Validation warnings
-* Custom renderers
-* JSON schema support (optional)
-
-### 📄 License
-
-MIT
-
----
-
-
-Reply with the number.
-We’re building something genuinely useful now 🚀
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
